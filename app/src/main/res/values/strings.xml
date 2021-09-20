@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Aditi Shopping</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="_07x_xxxxxxx">07X XXXXXXX</string>
+    <string name="text_register_no">Please enter number</string>
+    <string name="text_register_right_no">Number should be start with 07 and will have 10 digits in total </string>
+    <string name="text_register_correct_email">Please enter correct email</string>
+    <string name="text_register_password">Please enter long password</string>
+    <string name="text_register_not_matched">Password not matched</string>
+    <string name="exist">you don\'t exist</string>
+    <string name="text_register_term">Plese Accept term and Condition</string>
+    <string name="enter_name">Please enter Name</string>
+    <string name="enter_otp">Please enter verification code before proceed</string>
+    <string name="enter_6_digit_otp">Please enter 6 digit otp</string>
+    <string name="enter_no">Please enter mobile number</string>
+    <string name="name">Name</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="enter_date_of_birth">Please Select date of birth</string>
+    <string name="email">Email</string>
+    <string name="enter_email">Please enter email</string>
+    <string name="address">Address</string>
+    <string name="enter_address">Please enter address</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="enter_mob_no">Please enter mobile number</string>
+    <string name="digitofno_10">Please enter a valid mobile number</string>
+    <string name="you_don_t_have_an_account">You Don\'t have an account!</string>
+    <string name="enter_verification_code">Enter Verification Code</string>
+    <string name="email_optional">Email (Optional)</string>
+    <string name="pin_warn">Digital PIN has been sent to your mobile number, enter it below to continue</string>
+    <string name="shopping_cart">Shopping cart</string>
+    <string name="enter_pass">Please enter password</string>
+    <string name="select_img">Please select image</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="enter_street">Please enter street</string>
+    <string name="enter_city">Please enter city</string>
+    <string name="enter_state">Please enter state</string>
+    <string name="enter_country">Please enter country</string>
+
+
+    <string name="api_key">AIzaSyB3QmsSOIZu-gs8e_zQ6kWdUM8P5w-ypa8</string>
+
+    <string name="facebook_app_id">370387627885289</string>
+    <string name="fb_login_protocol_scheme">fb370387627885289</string>
+</resources>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@drawable/bg_background_main"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.SelectLanguage">
+
+    <ImageView
+        android:layout_margin="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+         android:src="@drawable/ic_logo"/>
+
+    <TextView
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Language"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/bold"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:theme="@style/RadioButton"
+            android:textColor="@drawable/selector_radio"
+            android:text="English"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"/>
+
+        <RadioButton
+            android:textSize="18sp"
+            android:layout_marginVertical="16dp"
+            android:theme="@style/RadioButton"
+            android:textColor="@drawable/selector_radio"
+            android:text="Sinhala"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"/>
+
+
+
+        <RadioButton
+            android:textSize="18sp"
+            android:text="Tamil"
+            android:theme="@style/RadioButton"
+            android:textColor="@drawable/selector_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"/>
+
+
+
+    </RadioGroup>
+
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:gravity="center"
+        android:id="@+id/tv_next"
+        android:textSize="14sp"
+        android:padding="10dp"
+        android:fontFamily="@font/regular"
+        android:background="@drawable/bg_solid_red"
+        android:textColor="@color/white"/>
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_background_main"
+    tools:context=".ui.activity.FilterActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_main"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="8dp"
+            android:id="@+id/iv_back"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_shape" />
+
+        <TextView
+            android:layout_marginRight="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:text="Filter"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_above="@+id/bootomView"
+        android:layout_below="@+id/ll_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.github.florent37.expansionpanel.ExpansionHeader
+                    android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:expansion_layout="@id/expansionPopularityLayout"
+                    app:expansion_headerIndicator="@id/headerIndicator"
+                    app:expansion_toggleOnClick="true">
+
+                    <!-- HEADER -->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_gravity="right"
+                                android:textSize="20sp"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/bold"
+                                android:textColor="@color/black"
+                                android:text="Popularity"/>
+
+
+                            <ImageView
+                                android:id="@+id/headerIndicator"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|center_vertical"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_icon_arrow_right" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+
+                            android:id="@+id/tv_PopularityDescription"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="14sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:textColor="@color/gray"
+                            android:text="No Setting"/>
+
+
+
+
+                    </LinearLayout>
+                    ...
+                    <!-- HEADER INDICATOR -->
+
+
+
+                </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                <com.github.florent37.expansionpanel.ExpansionLayout
+                    android:id="@+id/expansionPopularityLayout"
+                    android:layout_marginHorizontal="25dp"
+                    app:expansion_headerIndicator="@id/headerIndicator"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <!-- CONTENT -->
+
+
+
+                    <LinearLayout
+                        android:id="@+id/tv_ParentPopularityTitle"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_Size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </com.github.florent37.expansionpanel.ExpansionLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.github.florent37.expansionpanel.ExpansionHeader
+                    android:layout_marginTop="50dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:expansion_layout="@id/expansionBrandsLayout"
+                    app:expansion_headerIndicator="@id/headerBrandsIndicator"
+                    app:expansion_toggleOnClick="true">
+
+                    <!-- HEADER -->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_gravity="right"
+                                android:textSize="20sp"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/bold"
+                                android:textColor="@color/black"
+                                android:text="Brands"/>
+
+
+                            <ImageView
+                                android:adjustViewBounds="true"
+                                android:id="@+id/headerBrandsIndicator"
+                                android:layout_gravity="right|center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_width="wrap_content"
+                                app:srcCompat="@drawable/ic_icon_arrow_right" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/tv_BrandsDescription"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="14sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:textColor="@color/gray"
+                            android:text="No Setting"/>
+
+
+
+
+                    </LinearLayout>
+                    ...
+                    <!-- HEADER INDICATOR -->
+
+
+
+                </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                <com.github.florent37.expansionpanel.ExpansionLayout
+                    android:layout_marginHorizontal="25dp"
+                    android:id="@+id/expansionBrandsLayout"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <!-- CONTENT -->
+
+                    <LinearLayout
+                        android:id="@+id/tv_ChildBrandsTitle"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_Brand"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+
+
+
+                </com.github.florent37.expansionpanel.ExpansionLayout>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.github.florent37.expansionpanel.ExpansionHeader
+                    android:layout_marginTop="50dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:expansion_layout="@id/expansionPriceLayout"
+                    app:expansion_headerIndicator="@id/headerPriceIndicator"
+                    app:expansion_toggleOnClick="true">
+
+                    <!-- HEADER -->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_gravity="right"
+                                android:textSize="20sp"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/bold"
+                                android:textColor="@color/black"
+                                android:text="Price"/>
+
+
+                            <ImageView
+                                android:adjustViewBounds="true"
+                                android:id="@+id/headerPriceIndicator"
+                                android:layout_gravity="right|center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_width="wrap_content"
+                                app:srcCompat="@drawable/ic_icon_arrow_right" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/tv_PriceDescription"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="14sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:textColor="@color/gray"
+                            android:text="₹120"/>
+
+
+
+                    </LinearLayout>
+                    ...
+                    <!-- HEADER INDICATOR -->
+
+
+
+                </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                <com.github.florent37.expansionpanel.ExpansionLayout
+                    android:layout_marginHorizontal="25dp"
+                    android:id="@+id/expansionPriceLayout"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <!-- CONTENT -->
+
+                    <LinearLayout
+                        android:id="@+id/tv_ChildPriceLayout"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_Price"
+                            android:gravity="center"
+                            android:layout_gravity="right"
+                            android:textSize="20sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:textColor="@color/black"
+                            android:text="No setting found"/>
+
+                        <com.jaygoo.widget.RangeSeekBar
+                            android:layout_marginTop="16dp"
+                            android:id="@+id/rb_Price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:rsb_min_interval="100"
+                            app:rsb_mode="range"
+                            app:rsb_max="20000"
+                            app:rsb_min="1"
+                            app:rsb_thumb_scale_ratio="1.4"
+                            app:rsb_progress_color="@color/red"
+                            app:rsb_thumb_drawable="@drawable/thumb_activated"
+                            app:rsb_thumb_height="20dp"
+                            app:rsb_thumb_inactivated_drawable="@drawable/thumb_inactivated"
+                            app:rsb_thumb_width="20dp" />
+
+
+                    </LinearLayout>
+
+                </com.github.florent37.expansionpanel.ExpansionLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.github.florent37.expansionpanel.ExpansionHeader
+                    android:layout_marginTop="50dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:expansion_layout="@id/expansionColorLayout"
+                    app:expansion_headerIndicator="@id/headerColorIndicator"
+                    app:expansion_toggleOnClick="true">
+
+                    <!-- HEADER -->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_gravity="right"
+                                android:textSize="20sp"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/bold"
+                                android:textColor="@color/black"
+                                android:text="Color"/>
+
+
+                            <ImageView
+                                android:adjustViewBounds="true"
+                                android:id="@+id/headerColorIndicator"
+                                android:layout_gravity="right|center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_width="wrap_content"
+                                app:srcCompat="@drawable/ic_icon_arrow_right" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/tv_ColorDescription"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="14sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:textColor="@color/gray"
+                            android:text="No Setting"/>
+
+
+
+                    </LinearLayout>
+                    ...
+                    <!-- HEADER INDICATOR -->
+
+
+
+                </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                <com.github.florent37.expansionpanel.ExpansionLayout
+                    android:layout_marginHorizontal="25dp"
+                    android:id="@+id/expansionColorLayout"
+                    android:layout_height="100dp"
+                    android:layout_width="match_parent">
+
+                    <!-- CONTENT -->
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:id="@+id/tv_ChildColorLayout"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:layout_marginHorizontal="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/rv_Color"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+
+                </com.github.florent37.expansionpanel.ExpansionLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.github.florent37.expansionpanel.ExpansionHeader
+                    android:layout_marginTop="50dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:expansion_layout="@id/expansionRatingLayout"
+                    app:expansion_headerIndicator="@id/headerRatingIndicator"
+                    app:expansion_toggleOnClick="true">
+
+                    <!-- HEADER -->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_gravity="right"
+                                android:textSize="20sp"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/bold"
+                                android:textColor="@color/black"
+                                android:text="Rating"/>
+
+
+                            <ImageView
+                                android:adjustViewBounds="true"
+                                android:id="@+id/headerRatingIndicator"
+                                android:layout_gravity="right|center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_width="wrap_content"
+                                app:srcCompat="@drawable/ic_icon_arrow_right" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/tv_RatingDescription"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="14sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:textColor="@color/gray"
+                            android:text="3 star"/>
+
+
+
+                    </LinearLayout>
+                    ...
+                    <!-- HEADER INDICATOR -->
+
+
+
+                </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                <com.github.florent37.expansionpanel.ExpansionLayout
+                    android:layout_marginHorizontal="25dp"
+                    android:id="@+id/expansionRatingLayout"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <!-- CONTENT -->
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:id="@+id/tv_ChildRatingLayout"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_gravity="right"
+                            android:textSize="20sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:textColor="@color/black"
+                            android:text="No setting found"/>
+
+                        <RatingBar
+                            android:id="@+id/rb_Rating"
+                            android:theme="@style/RatingBar"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:rating="3" />
+
+                    </LinearLayout>
+
+                </com.github.florent37.expansionpanel.ExpansionLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.github.florent37.expansionpanel.ExpansionHeader
+                    android:layout_marginTop="50dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:expansion_layout="@id/expansionShipedFromLayout"
+                    app:expansion_headerIndicator="@id/headerShipedFromIndicator"
+                    app:expansion_toggleOnClick="true">
+
+                    <!-- HEADER -->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_gravity="right"
+                                android:textSize="20sp"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/bold"
+                                android:textColor="@color/black"
+                                android:text="Shiped from"/>
+
+
+                            <ImageView
+                                android:adjustViewBounds="true"
+                                android:id="@+id/headerShipedFromIndicator"
+                                android:layout_gravity="right|center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_width="wrap_content"
+                                app:srcCompat="@drawable/ic_icon_arrow_right" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:gravity="center"
+                            android:id="@+id/tv_ShipedFromDescription"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="14sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:textColor="@color/gray"
+                            android:text="No Setting"/>
+
+
+
+
+                    </LinearLayout>
+                    ...
+                    <!-- HEADER INDICATOR -->
+
+
+
+                </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                <com.github.florent37.expansionpanel.ExpansionLayout
+                    android:layout_marginBottom="50dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:id="@+id/expansionShipedFromLayout"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <!-- CONTENT -->
+
+                    <TextView
+                        android:gravity="center"
+                        android:id="@+id/tv_ChildShipedFromTitle"
+                        android:layout_gravity="right"
+                        android:textSize="20sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+                        android:textColor="@color/black"
+                        android:text="No setting found"/>
+
+                </com.github.florent37.expansionpanel.ExpansionLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.github.florent37.expansionpanel.ExpansionHeader
+                    android:layout_marginTop="50dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:expansion_layout="@id/expansionDiscountLayout"
+                    app:expansion_headerIndicator="@id/headerDiscountIndicator"
+                    app:expansion_toggleOnClick="true">
+
+                    <!-- HEADER -->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_gravity="right"
+                                android:textSize="20sp"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/bold"
+                                android:textColor="@color/black"
+                                android:text="Discount"/>
+
+
+                            <ImageView
+                                android:id="@+id/headerDiscountIndicator"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|center_vertical"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_icon_arrow_right" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+
+                            android:id="@+id/tv_DiscountDescription"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="14sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:textColor="@color/gray"
+                            android:text="No Setting"/>
+
+
+
+
+                    </LinearLayout>
+                    ...
+                    <!-- HEADER INDICATOR -->
+
+
+
+                </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                <com.github.florent37.expansionpanel.ExpansionLayout
+                    android:id="@+id/expansionDiscountLayout"
+                    android:layout_marginHorizontal="25dp"
+                    app:expansion_headerIndicator="@id/headerIndicator"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <!-- CONTENT -->
+
+
+
+                    <LinearLayout
+                        android:id="@+id/tv_ChildDiscountLayout"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_Discount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </com.github.florent37.expansionpanel.ExpansionLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="30dp"
+                android:id="@+id/ll_Categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.github.florent37.expansionpanel.ExpansionHeader
+                    android:layout_marginTop="50dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:expansion_layout="@id/expansionCategoriesLayout"
+                    app:expansion_headerIndicator="@id/headerCategoriesIndicator"
+                    app:expansion_toggleOnClick="true">
+
+                    <!-- HEADER -->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_gravity="right"
+                                android:textSize="20sp"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/bold"
+                                android:textColor="@color/black"
+                                android:text="Shipped From"/>
+
+
+                            <ImageView
+                                android:adjustViewBounds="true"
+                                android:id="@+id/headerCategoriesIndicator"
+                                android:layout_gravity="right|center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_width="wrap_content"
+                                app:srcCompat="@drawable/ic_icon_arrow_right" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/tv_CategoriesDescription"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="14sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:textColor="@color/gray"
+                            android:text="No Setting"/>
+
+
+
+
+                    </LinearLayout>
+                    ...
+                    <!-- HEADER INDICATOR -->
+
+
+
+                </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                <com.github.florent37.expansionpanel.ExpansionLayout
+                    android:layout_marginHorizontal="25dp"
+                    android:id="@+id/expansionCategoriesLayout"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <!-- CONTENT -->
+
+                    <LinearLayout
+                        android:id="@+id/tv_ChildCategoriesTitle"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_Categories"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+
+
+
+                </com.github.florent37.expansionpanel.ExpansionLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/bootomView"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="20sp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_red_stroke"
+            android:fontFamily="@font/regular"
+            android:gravity="center"
+            android:paddingHorizontal="20sp"
+            android:paddingVertical="10dp"
+            android:text="CLEAR"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="20sp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_solid_red"
+            android:fontFamily="@font/regular"
+            android:gravity="center"
+            android:paddingHorizontal="20sp"
+            android:paddingVertical="10dp"
+            android:text="APPLY"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
